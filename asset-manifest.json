@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rahat-rahman-project-five/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/rahat-rahman-project-five/static/js/main.fc7ccc00.chunk.js",
+    "main.js.map": "/rahat-rahman-project-five/static/js/main.fc7ccc00.chunk.js.map",
+    "runtime-main.js": "/rahat-rahman-project-five/static/js/runtime-main.08c9964d.js",
+    "runtime-main.js.map": "/rahat-rahman-project-five/static/js/runtime-main.08c9964d.js.map",
+    "static/js/2.1bf1ae72.chunk.js": "/rahat-rahman-project-five/static/js/2.1bf1ae72.chunk.js",
+    "static/js/2.1bf1ae72.chunk.js.map": "/rahat-rahman-project-five/static/js/2.1bf1ae72.chunk.js.map",
+    "index.html": "/rahat-rahman-project-five/index.html",
+    "precache-manifest.3369d263e5f578e489eb3f25a36601ec.js": "/rahat-rahman-project-five/precache-manifest.3369d263e5f578e489eb3f25a36601ec.js",
+    "service-worker.js": "/rahat-rahman-project-five/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/rahat-rahman-project-five/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.1bf1ae72.chunk.js.LICENSE.txt": "/rahat-rahman-project-five/static/js/2.1bf1ae72.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.08c9964d.js",
+    "static/js/2.1bf1ae72.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.fc7ccc00.chunk.js"
+  ]
+}
