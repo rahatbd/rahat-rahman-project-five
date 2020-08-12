@@ -11,7 +11,7 @@ class App extends Component {
             globalCases: {},
             countryCases: [],
             countryList: [],
-            userSelection: {},
+            userSelection: [],
         }
     }
     componentDidMount() {
@@ -22,6 +22,7 @@ class App extends Component {
         }).then(response => {
             console.log(response);
             const countryCollection = ['Global'];
+            // check length
             for (let index = 0; index <= 185; index++) {
                 countryCollection.push(response.data.Countries[index].Country);
             }
@@ -33,6 +34,20 @@ class App extends Component {
             })
         })
     }
+    getUserSelection = (userChoice) => {
+        // event.preventDefault();
+        // console.log(userChoice);
+        // console.log(this.state.countryCases);
+        const selectedCountry = this.state.countryCases.filter(country => {
+            return userChoice === country.Country;
+        })
+        // console.log(selectedCountry);
+        // console.log(this.state.userSelection);
+        this.setState({
+            userSelection: selectedCountry
+        })
+        // console.log('UserSel:', this.state.userSelection);
+    }
     render() {
         return (
         //   <div className="App">
@@ -41,12 +56,15 @@ class App extends Component {
                 <header>
                     <h1 className="wrapper">Covid-19 Tracker</h1>
                 </header>
-
-                <section className="wrapper">
-                    <Display globalData={this.state.globalCases}/>
-                    <Form countrySelection={this.state.countryList}/>
-                    {/* <Display globalData={this.state.canadaCases}/> */}
-                </section>
+                <Display globalData={this.state.globalCases} countryData={this.state.userSelection}/>
+                <Form countrySelection={this.state.countryList} getUserSelection={this.getUserSelection}/>
+                <footer>
+                    <div className="wrapper">
+                        <p>Data provided by <a href="https://covid19api.com/">covid 19 api</a></p>
+                        <p>Images used from <a href="https://unsplash.com/s/photos/virus">Unsplash</a></p>
+                        <p>Created by Rahat Rahman, 2020</p>
+                    </div>
+                </footer>
             </Fragment>
         )
     }
