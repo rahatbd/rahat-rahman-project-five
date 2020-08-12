@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    background-image: url(./adam-niescioruk-Z9arfr0f248-unsplash.jpg);
+    background-image: url(./images/adam-niescioruk-Z9arfr0f248-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -32,7 +32,7 @@ body {
 }
 
 header {
-    background-image: url(./marjanblan-kVxhRBQUY2Q-unsplash.jpg);
+    background-image: url(./images/marjanblan-kVxhRBQUY2Q-unsplash.jpg);
     background-size: contain;
 }
 

@@ -1,15 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import Display from './Display';
+import Form from './Form';
 import axios from 'axios';
-// import logo from './logo.svg';
-// import './App.css';
+import './styles/style.css';
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
             globalCases: {},
-            canadaCases: {},
+            countryCases: [],
+            countryList: [],
+            userSelection: {},
         }
     }
     componentDidMount() {
@@ -19,20 +21,15 @@ class App extends Component {
             dataResponse: 'json',
         }).then(response => {
             console.log(response);
-            console.log(response.data.Global);
-            console.log(response.data.Countries[30]);
-
-            const obj = response.data.Countries.filter(item => {
-                // console.log(item);
-                return item.Country === 'Brazil';
-            });
-            console.log(obj);
-
-            const globalData = response.data.Global;
-            const canadaData = response.data.Countries[30];
+            const countryCollection = ['Global'];
+            for (let index = 0; index <= 185; index++) {
+                countryCollection.push(response.data.Countries[index].Country);
+            }
+            // console.log(countryCollection);
             this.setState({
-                globalCases: globalData,
-                canadaCases: canadaData,
+                globalCases: response.data.Global,
+                countryCases: response.data.Countries,
+                countryList: countryCollection,
             })
         })
     }
@@ -47,7 +44,8 @@ class App extends Component {
 
                 <section className="wrapper">
                     <Display globalData={this.state.globalCases}/>
-                    <Display globalData={this.state.canadaCases}/>
+                    <Form countrySelection={this.state.countryList}/>
+                    {/* <Display globalData={this.state.canadaCases}/> */}
                 </section>
             </Fragment>
         )
