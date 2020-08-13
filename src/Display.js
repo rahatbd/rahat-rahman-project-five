@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Display = (props) => {
+const Display = props => {
     // console.log('props', props);
     for (let prop in props.globalData) {
         props.globalData[prop] = props.globalData[prop].toLocaleString();

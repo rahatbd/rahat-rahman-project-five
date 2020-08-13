@@ -14,7 +14,7 @@ class Form extends Component {
     }
     render() {
         return (
-            <form onClick={() => this.props.getUserSelection(this.state.userSelection)} className="wrapper">
+            <form onClick={() => this.props.userSelection(this.state.userSelection)} className="wrapper">
                 <label htmlFor="country">Select a country to view cases:</label>
                 <select onChange={this.handleChange} name="country" id="country">
                     {
