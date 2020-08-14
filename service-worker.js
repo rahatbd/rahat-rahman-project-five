@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rahat-rahman-project-five/precache-manifest.323b6a67d09632dac994c2ef60e63daa.js"
+  "/rahat-rahman-project-five/precache-manifest.8b54a1b23f84e9cadfac6dc23f8a2f5a.js"
 );
 
 self.addEventListener('message', (event) => {
