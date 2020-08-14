@@ -7,6 +7,12 @@ const Display = props => {
 
     const { NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered } = props.globalData;
 
+    let updatedDateTime;
+    if (props.countryData.length !== 0) {
+        const options = { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' };
+        updatedDateTime = (new Date(Date.parse((props.countryData[0].Date)))).toLocaleString('en-CA', options);
+    }
+
     return (
         <section className="wrapper">
             {
@@ -21,7 +27,7 @@ const Display = props => {
                         <p className="recover">Total Recovered: <span>{TotalRecovered}</span></p>
                       </div>
                     : <div className="cases">
-                        <h2>{props.countryData[0].Country} Cases</h2>
+                        <h2>{props.countryData[0].Country}<span>Last Updated: {updatedDateTime}</span></h2>
                         <p className="confirm">New Confirmed: <span>{props.countryData[0].NewConfirmed.toLocaleString()}</span></p>
                         <p className="death">New Deaths: <span>{props.countryData[0].NewDeaths.toLocaleString()}</span></p>
                         <p className="recover">New Recovered: <span>{props.countryData[0].NewRecovered.toLocaleString()}</span></p>

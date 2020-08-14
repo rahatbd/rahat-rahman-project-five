@@ -20,6 +20,17 @@ class App extends Component {
             url: 'https://api.covid19api.com/summary',
             dataResponse: 'json',
         }).then(response => {
+            // const dd = response.data.Countries[13].Date;
+            // const ddd = new Date(Date.parse(dd));
+            // console.log(dd);
+            // console.log(Date.parse(dd));
+            // console.log(ddd);
+            // // console.log(ddd.toLocaleString('en-CA'));
+            // // const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            // const options = {month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short'};
+            // const updatedDateTime = (new Date(Date.parse((response.data.Countries[13].Date)))).toLocaleString('en-CA', options);
+            // console.log(updatedDateTime);
+
             console.log(response);
             const countryCollection = ['Global'];
             for (let index = 0; index < response.data.Countries.length; index++) {
@@ -41,6 +52,12 @@ class App extends Component {
         })
     }
     render() {
+        // let dates;
+        // if (this.state.userSelection.length !== 0) {
+        //     console.log('header', this.state.userSelection[0].Date);
+        //     dates = this.state.userSelection[0].Date;
+        // }
+
         return (
             <Fragment>
                 <header>
@@ -61,5 +78,3 @@ class App extends Component {
 }
 
 export default App;
-
-//Add date?
